@@ -11,14 +11,17 @@
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "cpy": "^6.0.0",
+    "font-awesome": "^4.7.0",
     "node-sass": "^4.6.0",
     "onchange": "^3.2.1",
     "stylelint": "^8.2.0"
   },
   "scripts": {
-    "copy:bootstrap": "cpy ./node_modules/bootstrap/dist/js/bootstrap.min.js ./js",
+    "copy:bootstrap.js": "cpy ./node_modules/bootstrap/dist/js/bootstrap.min.js ./js",
     "copy:popper.js": "cpy ./node_modules/popper.js/dist/popper.min.js ./js",
     "copy:jquery": "cpy ./node_modules/jquery/dist/jquery.slim.min.js ./js",
+    "copy:bootstrap.css": "cpy ./node_modules/bootstrap/dist/css/bootstrap.min.css ./css",
+    "copy:font-awesome": "cpy ./node_modules/font-awesome/css/font-awesome.min.css ./css",
     "copy": "run-s copy:*",
     "scss": "node-sass -o css scss",
     "lint-scss": "stylelint scss/style.scss --syntax scss || true",
@@ -27,7 +30,6 @@
     "build": "run-s build:*",
     "watch:css": "onchange \"/scss\" -- run-s build:css",
     "watch:js": "onchange \"js/*.js\" -- run-s build:js",
-    "watch:images": "onchange \"/images\" -- run-s build:images",
     "watch": "run-p serve watch:*",
     "postinstall": "run-s build watch"
   },
