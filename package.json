@@ -20,7 +20,7 @@
     "copy:popper.js": "cpy ./node_modules/popper.js/dist/popper.min.js ./js",
     "copy:jquery": "cpy ./node_modules/jquery/dist/jquery.slim.min.js ./js",
     "copy": "run-s copy:*",
-    "scss": "node-sass -o /css /scss",
+    "scss": "node-sass -o css scss",
     "lint-scss": "stylelint scss/style.scss --syntax scss || true",
     "serve": "browser-sync start --server --files \"css/*.css, js/*.js, **/*.html, !node_modules/**/*.html\"",
     "build:css": "run-s lint-scss scss",
